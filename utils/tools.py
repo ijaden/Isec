@@ -7,6 +7,7 @@ import socket
 from Crypto.Util.number import *
 import sympy
 from cryptography.fernet import Fernet
+from socket import *
 
 def egcd(a, b):
     """
