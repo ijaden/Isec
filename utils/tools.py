@@ -8,6 +8,7 @@ from Crypto.Util.number import *
 import sympy
 from cryptography.fernet import Fernet
 from socket import *
+import string
 
 def egcd(a, b):
     """
@@ -113,7 +114,12 @@ def get_large_enough_prime(batch):
             return prime
     return None
 
-
+def generate_random_string(length=5):
+    # 从所有可打印的ASCII字符中选择字符
+    characters = string.ascii_letters + string.digits + string.punctuation
+    # 生成指定长度的随机字符串
+    random_string = ''.join(random.choice(characters) for _ in range(length))
+    return random_string
 
 
 
